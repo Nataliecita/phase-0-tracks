@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Practice form</title>
+</head>
+<body>
+   
+    <h1>What animal should you get?</h1>
+
+
+  <form name ="fav_animal" action="success.html" method="post">
+
+    <div>
+        <label> Name:</label>
+        <input type="text" name="name">   
+      </div>  
+        
+    
+      <div>
+        <label> What animal do you like?</label>
+        <select name ="animals">
+        <option value ="cat">Cats</option>
+        <option value ="dog">Dog</option>
+        <option value ="lion">Lion</option>
+        </select>  
+      </div>
+    
+    <label> When did you decide on this life changing choice?</label>
+    <input type="date" name="date">
+    
+     <div>
+        <label> What is your reasoning?</label>
+        <input type="text" name="reason">   
+     </div> 
+    
+    <label> Are you going to take good care of it?</label>
+    <input type="checkbox" name="cb-agree" value="agree">
+    <button type="submit"> Submit </button> 
+  </form>
+
+</body>
+</html>
