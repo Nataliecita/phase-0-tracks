@@ -18,7 +18,8 @@ html, body {
 #glasses {
   position: absolute;
   margin-top: 185px;
-  /*left: 55;*/
+  left: 50%;
+  margin-left: -62px;
   z-index: 2;
 }
 
