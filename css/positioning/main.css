@@ -1,0 +1,40 @@
+html, body {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+
+
+.octo {
+  margin-top: 85px;
+  position: absolute;
+  /*margin-left: auto ;*/
+  /*display:block;*/
+  left: 50%;
+  margin-left: -105px;
+  /*margin-right: auto; */
+  z-index: 1;
+
+}
+
+/*#glasses {
+  position: absolute;
+   margin-top: 185px;
+  margin-left: 55px;
+  display: block;
+  z//-index: 2;
+}*/
+
+#hat {
+  position: absolute;
+  z-index: 3;
+  left:50%;
+  margin-left: -137px;
+}
+
+ 
+ 
+
+
+
