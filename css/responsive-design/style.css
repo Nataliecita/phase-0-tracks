@@ -61,6 +61,13 @@ figcaption {
   }
 }
 
+@media screen and (max-width: 475px) {
+  img { 
+    display: none;
+   }
+}
+
+
 
 
 
