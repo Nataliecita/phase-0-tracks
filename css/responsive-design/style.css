@@ -2,10 +2,18 @@ body {
   width: 960px;
 }
 
-external-links {
+#external-links {
   width: 200px;
-  position: 
+  display: inline-block;
+  vertical-align: top;
+
 }
+
+main {
+  width: 756px;
+  display: inline-block;
+}
+
 
 blockquote {
   border-left: 5px solid blue;
@@ -39,3 +47,5 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+
