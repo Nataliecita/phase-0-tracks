@@ -1,17 +1,18 @@
 body {
-  width: 960px;
+  max-width: 960px; 
+  min-width: 475px;
 }
 
 #external-links {
-  width: 200px;
+  width: 20%;
   display: inline-block;
-  vertical-align: top;
-
+  min-width: 88px;
 }
 
 main {
-  width: 756px;
+  width: 77%;
   display: inline-block;
+  vertical-align: top;
 }
 
 
