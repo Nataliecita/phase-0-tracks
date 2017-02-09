@@ -11,8 +11,10 @@ body {
 
 main {
   width: 77%;
+  position: absolute;
   display: inline-block;
   vertical-align: top;
+  /*left: 50%;*/
 }
 
 
