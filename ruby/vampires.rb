@@ -24,10 +24,11 @@ end
 
 if valid_age == true && (garlic == "yes" || insurance == "yes")
   result = "Probably not a vampire."
+elsif valid_age == false && (garlic == "no" && insurance =="no")
+  result = "Almost certainly a vampire"     
 elsif valid_age != true && (garlic == "no" || insurance =="no") 
   result = "Probably a vampire"
-elsif valid_age == false && (garlic == "no" && insurance =="no")
-  result = "Almost certainly a vampire"           
+        
 end  
 
 p result
