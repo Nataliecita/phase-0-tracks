@@ -2,8 +2,9 @@
 puts "How many employees will be processed?"
 employees = gets.chomp.to_i
 
+#look into using the times loop.
 
-while employees != 0
+employees.times do  
   puts "What is your name?"
   name_input = gets.chomp
 
@@ -19,20 +20,9 @@ while employees != 0
   puts "Would you like to enroll in the company's health insurance?"
   insurance = gets.chomp
 
-
-
- #what does...
-  #2017 - year == age
-  #...return?
-  #Once you figure out it's return see if you can refactor setting valid_age
-
-
-
   # make sure age is valid
   if (2017 - year) == age
     valid_age = true
-  # else
-  #   valid_age = false
   end  
 
   # Start checking conditions
@@ -66,9 +56,6 @@ while employees != 0
     result = "Probably a vampire"
   end  
 
-
-  # update employees
-  employees -= 1
   puts result
 end  
 
