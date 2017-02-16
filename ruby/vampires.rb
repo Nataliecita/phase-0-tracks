@@ -46,6 +46,10 @@ while employees != 0
     result = "Definitely a vampire" 
   end  
 
+  puts "Also, do you have any allergies? When finished type 'done' "
+  allergies = gets.chomp.downcase!
+  puts allergies
+
   # update employees
   employees -= 1
   p result
