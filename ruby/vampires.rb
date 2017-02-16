@@ -49,13 +49,13 @@ while employees != 0
   puts "Also, do you have any allergies? When finished type 'done' "
   allergies = gets.chomp
 
-  until allergies == "none" || allergies == "done" 
+  until allergies == "none" || allergies == "done" || allergies == "sunshine"
     allergies = gets.chomp
-
-    if allergies =="sunshine"
-      result = "Probably a vampire"
-    end
   end
+
+  if allergies == "sunshine"
+    result = "Probably a vampire"
+  end  
 
 
   # update employees
