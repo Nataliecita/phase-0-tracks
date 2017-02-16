@@ -30,15 +30,15 @@ while employees != 0
   if valid_age == true && (garlic == "yes" || insurance == "yes")
     result = "Probably not a vampire."
   elsif valid_age != true && (garlic == "no" || insurance =="no") 
-    result = "Probably a vampire"       
+    result = "Probably a vampire"   
+   else
+      # condition is here because its the one that is missing. age false, name ok, but they like garlic and want insurance 
+    result = "Results inconclusive"       
   end  
 
   # separate this last one. Otherwise, it will never be checked because previous one meets the condition
   if valid_age != true && (garlic == "no" && insurance =="no") 
-    result = "Almost certainly a vampire"
-  # else
-  #     # condition is here because its the one that is missing. age false, name ok, but they like garlic and want insurance)
-  #   result = "Results inconclusive"   
+    result = "Almost certainly a vampire"  
   end
 
   # separate otherwise, it wont be checked even when valid age is true and garlic is yes and insurance no
