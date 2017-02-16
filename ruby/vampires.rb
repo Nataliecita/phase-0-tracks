@@ -46,17 +46,17 @@ while employees != 0
     result = "Definitely a vampire" 
   end  
 
-  allergies =
+  puts "Also, do you have any allergies? When finished type 'done' "
+  allergies = gets.chomp
 
-  until allergies == "done" || allergies =="sunshine"
-    puts "Also, do you have any allergies? When finished type 'done' "
-    allergies = gets.chomp.downcase!
-    puts allergies
+  until allergies == "none" || allergies == "done" 
+    allergies = gets.chomp
+
+    if allergies =="sunshine"
+      result = "Probably a vampire"
+    end
   end
 
-  if allergies =="sunshine"
-    result = "Probably a vampire"
-  end    
 
   # update employees
   employees -= 1
