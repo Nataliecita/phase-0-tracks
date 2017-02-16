@@ -14,14 +14,13 @@ puts "Would you like to enroll in the company's health insurance?"
 insurance = gets.chomp
 
 # make sure age is valid
-
-
 if (2017 - year) == age
   valid_age = true
 else
   valid_age = false  
 end  
 
+# Start checking conditions
 if valid_age == true && (garlic == "yes" || insurance == "yes")
   result = "Probably not a vampire."
 elsif valid_age != true && (garlic == "no" || insurance =="no") 
@@ -40,10 +39,5 @@ end
 if name_input =="Drake Cula" || name_input == "Tu Fang"
   result = "Definitely a vampire" 
 end  
-
-
-
-
-
 
 p result
