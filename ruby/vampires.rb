@@ -19,17 +19,26 @@ while employees != 0
   puts "Would you like to enroll in the company's health insurance?"
   insurance = gets.chomp
 
+
+
+ #what does...
+  #2017 - year == age
+  #...return?
+  #Once you figure out it's return see if you can refactor setting valid_age
+
+
+
   # make sure age is valid
   if (2017 - year) == age
     valid_age = true
-  else
-    valid_age = false  
+  # else
+  #   valid_age = false
   end  
 
   # Start checking conditions
-  if valid_age == true && (garlic == "yes" || insurance == "yes")
+  if valid_age && (garlic == "yes" || insurance == "yes")
     result = "Probably not a vampire."
-  elsif valid_age != true && (garlic == "no" || insurance =="no") 
+  elsif !valid_age && (garlic == "no" || insurance =="no") 
     result = "Probably a vampire"   
    else
       # condition is here because its the one that is missing. age false, name ok, but they like garlic and want insurance 
@@ -37,7 +46,7 @@ while employees != 0
   end  
 
   # separate this last one. Otherwise, it will never be checked because previous one meets the condition
-  if valid_age != true && (garlic == "no" && insurance =="no") 
+  if !valid_age && (garlic == "no" && insurance =="no") 
     result = "Almost certainly a vampire"  
   end
 
@@ -60,7 +69,7 @@ while employees != 0
 
   # update employees
   employees -= 1
-  p result
+  puts result
 end  
 
 puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
