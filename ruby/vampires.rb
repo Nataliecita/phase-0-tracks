@@ -2,8 +2,6 @@
 puts "How many employees will be processed?"
 employees = gets.chomp.to_i
 
-#look into using the times loop.
-
 employees.times do  
   puts "What is your name?"
   name_input = gets.chomp
@@ -16,31 +14,34 @@ employees.times do
 
   puts "Our cafeteria serves garlic bread. Should we order some for you?"
   garlic = gets.chomp
+  like_garlic = garlic == 'yes'
 
   puts "Would you like to enroll in the company's health insurance?"
   insurance = gets.chomp
 
+  wants_insurance = insurance == 'yes'
+
   # make sure age is valid
-  if (2017 - year) == age
-    valid_age = true
-  end  
+  valid_age = 2017 - year == age
 
   # Start checking conditions
-  if valid_age && (garlic == "yes" || insurance == "yes")
+
+  if valid_age && (like_garlic || wants_insurance)
     result = "Probably not a vampire."
-  elsif !valid_age && (garlic == "no" || insurance =="no") 
+  elsif !valid_age && (!like_garlic || !wants_insurance) 
     result = "Probably a vampire"   
-   else
-      # condition is here because its the one that is missing. age false, name ok, but they like garlic and want insurance 
+   else # age false, name ok, but they like garlic and want insurance 
     result = "Results inconclusive"       
   end  
 
   # separate this last one. Otherwise, it will never be checked because previous one meets the condition
-  if !valid_age && (garlic == "no" && insurance =="no") 
+
+  if !valid_age && (!like_garlic && !wants_insurance) 
     result = "Almost certainly a vampire"  
   end
 
   # separate otherwise, it wont be checked even when valid age is true and garlic is yes and insurance no
+
   if name_input =="Drake Cula" || name_input == "Tu Fang"
     result = "Definitely a vampire" 
   end  
