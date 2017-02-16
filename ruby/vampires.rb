@@ -25,10 +25,23 @@ end
 if valid_age == true && (garlic == "yes" || insurance == "yes")
   result = "Probably not a vampire."
 elsif valid_age != true && (garlic == "no" || insurance =="no") 
-  result = "Probably a vampire"   
-elsif valid_age == false && (garlic == "no" && insurance =="no")
-  result = "Almost certainly a vampire"     
-      
+  result = "Probably a vampire"       
 end  
+
+# separate this last one. Otherwise, it will never be checked because previous one meets the condition
+if valid_age != true && (garlic == "no" || insurance =="no") 
+  result = "Almost certainly a vampire" 
+elsif name_input =="Drake Cula" || name_input == "Tu Fang"
+  result = "Definitely a vampire"
+end  
+
+# separate otherwise, it wont be checked
+
+# if result == "Almost certainly a vampire" && (name_input =="Drake Cula" || name_input == "Tu Fang")
+#   result = "Definitely a vampire"
+# else
+
+# end  
+
 
 p result
