@@ -37,5 +37,9 @@ new_colors = []
 
 # p colors
 # p new_colors
+p colors
 
+colors.map! { |color| color.upcase}
+
+p colors
 
