@@ -46,4 +46,15 @@ bball_team = {
   }
 }
 
-puts bball_team
+
+# show access to different elements
+
+# access the # of forwards for the boys varsity team
+bball_team[:boys][:varsity][:team_info][:forwards]
+
+# michael (Michael Jordan), was cut from the boys varsity team (in real life, this happened when he was a sophomore)
+bball_team[:boys][:varsity][:seniors].delete("Michael")
+
+# p bball_team[:boys][:varsity][:seniors]
+
+
