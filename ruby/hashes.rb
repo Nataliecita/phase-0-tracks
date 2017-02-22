@@ -52,6 +52,7 @@ if wants_update
   puts "what will you want to change it to?"
 
   if change == :age || change == :children
+    # change data type to corresponding one
      client[change] = gets.chomp.to_i
   elsif change == :likes_surprises
     surprises = gets.chomp
