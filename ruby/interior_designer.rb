@@ -25,3 +25,4 @@ puts "after"
  hash[:name] + hash[:address]
 
  puts hash
+ 
