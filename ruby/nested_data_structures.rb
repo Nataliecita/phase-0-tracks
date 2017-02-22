@@ -57,4 +57,13 @@ bball_team[:boys][:varsity][:seniors].delete("Michael")
 
 # p bball_team[:boys][:varsity][:seniors]
 
+# capitalize sarah's name, she is a senior on the varsity girls team. 
+ bball_team[:girls][:varsity][:seniors][0].capitalize
+
+# how many players are there on the boys jv team?
+num_players_boys_jv = bball_team[:boys][:varsity][:team_info][:guards] + bball_team[:boys][:varsity][:team_info][:forwards] + bball_team[:boys][:varsity][:team_info][:centers]
+
+num_players_boys_jv
+
+# the seniors from the JV boys team got moved up to the boys varsity team
 
