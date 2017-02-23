@@ -58,20 +58,31 @@ end
 
 def shift(letter_array, char)
 	# check to see if its the last one . edge case
+	new_letter = nil
 	if char == letter_array[-1]
-		char = letter_array[0]
-	end	
+		new_letter = letter_array[0]
+	else
+	new_position = letter_array.index(char) + 1 
+		new_letter = letter_array[new_position]
 		
 	# letter_array[char] = letter_array[char].next
 	# p letter_array[char]	
 	# letter_array
+	end
 	
 end
 
 
 hello = ['a','e','i','o','u']
 
+p shift(hello, 'a')
+p shift(hello, 'e')
+p shift(hello, 'i')
+p shift(hello, 'o')
 p shift(hello, 'u')
+p shift(hello, 'a')
+
+
 
 
 def start(string)
