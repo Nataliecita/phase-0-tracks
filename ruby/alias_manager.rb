@@ -44,7 +44,13 @@ def to_change(alias_name)
   # see if there needs to be a change
   # go through each character, if vowel call the vowel method
  alias_name.each do |char|
- 	if char 
+ 	if char.ord == 97 || char.ord == 101 || char.ord == 105 || char.ord == 111 || char.ord == 117 
+ 		puts "vowel"
+ 	elsif char.ord == 32
+ 		puts "space"
+ 	else
+ 		puts "con"	
+ 				
  	 	
  	 end 
  	end
@@ -54,7 +60,8 @@ def to_change(alias_name)
   # else do nothing
 end  
 
-to_change(['n','a','t','a'])
+# p ' '.ord
+to_change(['n',' ','t','e'])
 
 def vowel_shift(char)
 	vowels   = ['a','e','i','o','u']
@@ -69,6 +76,8 @@ def con_shift(char)
 end	
 
 def shift(letter_array, char)
+
+	# shift should come from either vowel_shift or con_shift
 	# check to see if its the last one . edge case
 	new_letter = nil
 	if char == letter_array[-1]
