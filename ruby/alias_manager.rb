@@ -42,26 +42,21 @@ end
 
 def to_change(alias_name)
   # see if there needs to be a change
-  # go through each character, if vowel call the vowel method
  alias_name.each do |char|
  	if char.ord == 97 || char.ord == 101 || char.ord == 105 || char.ord == 111 || char.ord == 117 
- 		puts "vowel"
+ 		# call vowel_shift
+ 		# puts "vowel"
  	elsif char.ord == 32
- 		puts "space"
+ 		# do nothing :)
+ 		# puts "space"
  	else
- 		puts "con"	
- 				
- 	 	
+ 		# puts "con"
+ 		# call con_switch
  	 end 
  	end
- #HOW DO I PASS THINGS THROUGH IT??
-	
-  # elseif consonant call the consonant vowel,
-  # else do nothing
 end  
 
-# p ' '.ord
-to_change(['n',' ','t','e'])
+# to_change(['n',' ','t','e'])
 
 def vowel_shift(char)
 	vowels   = ['a','e','i','o','u']
