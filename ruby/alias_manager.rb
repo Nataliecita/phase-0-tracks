@@ -25,6 +25,9 @@
  # -get_name_ready
 
 
+
+
+
  # set global variables
 vowels = ['a','e','i','o','u']
 consonants = ['b', 'c', 'd', 'f', 'g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z']
@@ -99,13 +102,20 @@ end
 
 
 
-def start(string)
-	get_name_ready(string)
-	to_change(char)
-	p  "start"
-end
+# def start(string)
+# 	get_name_ready(string)
+# 	to_change(char)
+# 	p  "start"
+# end
 
 # get_name_ready("Natalie Ruiz")
 # to_change("Natalie Ruiz")
 # start("Natalie Ruiz")
+
+def change_name(original_name)
+	get_name_ready(original_name)
+	
+end
+
+puts change_name"Natalie Ruiz"
 
