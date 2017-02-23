@@ -19,7 +19,10 @@
 
 # get_name_ready
 
- 
+ # SUMMARY
+ # methods working standing alone
+ # -shift
+ # -get_name_ready
 
 
 def get_name_ready(name_input)
@@ -36,23 +39,24 @@ end
 def to_change(alias_name)
   # see if there needs to be a change
   # go through each character, if vowel call the vowel method
-  
-# THIS PART ISNT WORKING> HOW DO I PASS THINGS THROUGH IT??
-  alias_name.each do|char| yield char
-  end	
+ alias_name.each {|x| print x, " -- " } 
+ #HOW DO I PASS THINGS THROUGH IT??
+	
   # elseif consonant call the consonant vowel,
   # else do nothing
-  yield char
 end  
+
+to_change(['n','a','t','a'])
 
 def vowel_shift(char)
 	vowels   = ['a','e','i','o','u']
 	# scan to see what letter it is
-
+	# i need this to return the letter and the array
 end
 
 def con_shift(char)
 	consonants = ['b', 'c', 'd', 'f', 'g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z']
+	# i need this to return the letter and the array
 
 end	
 
@@ -64,23 +68,19 @@ def shift(letter_array, char)
 	else
 	new_position = letter_array.index(char) + 1 
 		new_letter = letter_array[new_position]
-		
-	# letter_array[char] = letter_array[char].next
-	# p letter_array[char]	
-	# letter_array
 	end
 	
 end
 
+# DRIVER CODE for shift method
+# hello = ['a','e','i','o','u']
 
-hello = ['a','e','i','o','u']
-
-p shift(hello, 'a')
-p shift(hello, 'e')
-p shift(hello, 'i')
-p shift(hello, 'o')
-p shift(hello, 'u')
-p shift(hello, 'a')
+# p shift(hello, 'a')
+# p shift(hello, 'e')
+# p shift(hello, 'i')
+# p shift(hello, 'o')
+# p shift(hello, 'u')
+# p shift(hello, 'a')
 
 
 
