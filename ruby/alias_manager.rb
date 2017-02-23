@@ -45,14 +45,34 @@ def to_change(alias_name)
   yield char
 end  
 
-def vowel_shift
+def vowel_shift(char)
 	vowels   = ['a','e','i','o','u']
+	# scan to see what letter it is
+
 end
 
-def con_shift
+def con_shift(char)
 	consonants = ['b', 'c', 'd', 'f', 'g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z']
 
 end	
+
+def shift(letter_array, char)
+	# check to see if its the last one . edge case
+	if char == letter_array[-1]
+		# letter_array.index(char) = 0
+		puts "hello"
+	# end
+	# letter_array[char] = letter_array[char].next
+	# p letter_array[char]	
+	# letter_array
+	end
+end
+
+
+hello = ['a','e','i','o','u']
+
+p shift(hello, 'u')
+
 
 def start(string)
 	get_name_ready(string)
@@ -60,8 +80,6 @@ def start(string)
 	p  "start"
 end
 
-p vowel_shift
-puts con_shift
 # get_name_ready("Natalie Ruiz")
 # to_change("Natalie Ruiz")
 # start("Natalie Ruiz")
