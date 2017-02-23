@@ -59,13 +59,13 @@ end
 def shift(letter_array, char)
 	# check to see if its the last one . edge case
 	if char == letter_array[-1]
-		# letter_array.index(char) = 0
-		puts "hello"
-	# end
+		char = letter_array[0]
+	end	
+		
 	# letter_array[char] = letter_array[char].next
 	# p letter_array[char]	
 	# letter_array
-	end
+	
 end
 
 
