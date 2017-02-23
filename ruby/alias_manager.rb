@@ -44,24 +44,26 @@ def to_change(alias_name)
   # see if there needs to be a change
  alias_name.each do |char|
  	if char.ord == 97 || char.ord == 101 || char.ord == 105 || char.ord == 111 || char.ord == 117 
- 		# call vowel_shift
+ 		# call vowel_shift and send char --> how do i link them??
+ 		# char
  		# puts "vowel"
  	elsif char.ord == 32
  		# do nothing :)
- 		# puts "space"
+ 		puts "space"
  	else
- 		# puts "con"
- 		# call con_switch
+ 		puts "con"
+ 		# call con_shift
  	 end 
  	end
 end  
 
-# to_change(['n',' ','t','e'])
 
-def vowel_shift(char)
+def vowel_shift(to_change)
 	vowels   = ['a','e','i','o','u']
 	# scan to see what letter it is
 	# i need this to return the letter and the array
+	p "it links!"
+	shift(vowels, char)
 end
 
 def con_shift(char)
