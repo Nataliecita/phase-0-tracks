@@ -39,8 +39,7 @@ def get_name_ready(name_input)
   # swap the first and last name
   alias_name[0], alias_name[1] = alias_name[1], alias_name[0]
   # change back to string, lowercase, then separate each char
-  alias_name = alias_name.join(' ').downcase.chars
-  # p "read" alias_name
+  return alias_name = alias_name.join(' ').downcase.chars
 end  
 
 def to_change(alias_name)
@@ -49,7 +48,7 @@ def to_change(alias_name)
  	if char.ord == 97 || char.ord == 101 || char.ord == 105 || char.ord == 111 || char.ord == 117 
  		# call vowel_shift and send char --> how do i link them??
  		# char
- 		# puts "vowel"
+ 		puts "vowel"
  	elsif char.ord == 32
  		# do nothing :)
  		puts "space"
@@ -114,8 +113,12 @@ end
 
 def change_name(original_name)
 	get_name_ready(original_name)
-	
+	# to_change(alias_name) #alias_name is undefined, so how can I pass instead the return from get_name_ready to the method to_change????
 end
 
-puts change_name"Natalie Ruiz"
+ final_answer = change_name"Natalie Ruiz"
+ # p final_answer.to_change #120:in `<main>': private method `to_change' called for ["r", "u", "i", "z", " ", "n", "a", "t", "a", "l", "i", "e"]:Array (NoMethodError)
+
+ p to_change(final_answer)
+
 
