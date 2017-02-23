@@ -19,11 +19,16 @@
 
 # get_name_ready
 
-def get_name_ready(name)
-  # split first and last name
-  p name.split(' ')
-  # swap the first and last name
+ 
 
+
+def get_name_ready(name_input)
+  # split first and last name
+
+  alias_name = name_input.split(' ')
+  # swap the first and last name
+  alias_name[0], alias_name[1] = alias_name[1], alias_name[0]
+  p alias_name
 end  
 
 get_name_ready("Natalie Ruiz")
