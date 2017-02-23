@@ -28,7 +28,14 @@ def get_name_ready(name_input)
   alias_name = name_input.split(' ')
   # swap the first and last name
   alias_name[0], alias_name[1] = alias_name[1], alias_name[0]
-  p alias_name
+  # change back to string, lowercase, then separate each char
+  alias_name = alias_name.join(' ').downcase.chars
+
+  # p alias_name
+  
 end  
+
+
+
 
 get_name_ready("Natalie Ruiz")
