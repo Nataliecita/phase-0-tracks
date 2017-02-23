@@ -30,18 +30,39 @@ def get_name_ready(name_input)
   alias_name[0], alias_name[1] = alias_name[1], alias_name[0]
   # change back to string, lowercase, then separate each char
   alias_name = alias_name.join(' ').downcase.chars
-  # p alias_name
+  # p "read" alias_name
 end  
 
-def to_change(get_name_ready)
+def to_change(alias_name)
   # see if there needs to be a change
   # go through each character, if vowel call the vowel method
-
+  
+# THIS PART ISNT WORKING> HOW DO I PASS THINGS THROUGH IT??
+  alias_name.each do|char| yield char
+  end	
   # elseif consonant call the consonant vowel,
   # else do nothing
+  yield char
 end  
 
+def vowel_shift
+	vowels   = ['a','e','i','o','u']
+end
 
+def con_shift
+	consonants = ['b', 'c', 'd', 'f', 'g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z']
 
+end	
 
-get_name_ready("Natalie Ruiz")
+def start(string)
+	get_name_ready(string)
+	to_change(char)
+	p  "start"
+end
+
+p vowel_shift
+puts con_shift
+# get_name_ready("Natalie Ruiz")
+# to_change("Natalie Ruiz")
+# start("Natalie Ruiz")
+
