@@ -44,19 +44,36 @@ end
 
 def to_change(alias_name)
   # see if there needs to be a change
- alias_name.each do |char|
+ alias_name.map! do |char|
+ 	vowels   = ['a','e','i','o','u']
+ 	consonants = ['b', 'c', 'd', 'f', 'g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z']
+
  	if char.ord == 97 || char.ord == 101 || char.ord == 105 || char.ord == 111 || char.ord == 117 
  		# call vowel_shift and send char --> how do i link them??
  		# char
  		puts "vowel"
+ 		if char == vowels[-1]
+		new_letter = vowels[0]
+		else
+		new_position = vowels.index(char) + 1 
+			new_letter = vowels[new_position]
+		end
  	elsif char.ord == 32
  		# do nothing :)
  		puts "space"
  	else
  		puts "con"
  		# call con_shift
+ 		if char == consonants[-1]
+		new_letter = consonants[0]
+		else
+		new_position = consonants.index(char) + 1 
+			new_letter = consonants[new_position]
+		end
  	 end 
  	end
+
+ 	
 end  
 
 
@@ -64,7 +81,7 @@ def vowel_shift(to_change)
 	vowels   = ['a','e','i','o','u']
 	# scan to see what letter it is
 	# i need this to return the letter and the array
-	p "it links!"
+	# p "it links!"
 	shift(vowels, char)
 end
 
@@ -116,9 +133,18 @@ def change_name(original_name)
 	# to_change(alias_name) #alias_name is undefined, so how can I pass instead the return from get_name_ready to the method to_change????
 end
 
- final_answer = change_name"Natalie Ruiz"
+ final_answer = change_name"Felicia Torres"
  # p final_answer.to_change #120:in `<main>': private method `to_change' called for ["r", "u", "i", "z", " ", "n", "a", "t", "a", "l", "i", "e"]:Array (NoMethodError)
 
- p to_change(final_answer)
+p final_answer = to_change(final_answer)
+
+puts "Felicia Torres" == "Vussit Gimodoe"
+
+
+
+# method shift needs to know if it will shift a vowel, a con, or nothing... I wanted to separate the methods, but now I am getting confused as to how to pass each one individually (both vowel shift and con shift to shift.) Maybe I should just add the shift change logic into each respective condition on method to_change?
+
+# I was also having problems earlier linking the methods so I just created a variable that would hold that answer.
+
 
 
