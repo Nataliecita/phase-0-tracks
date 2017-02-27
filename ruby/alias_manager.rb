@@ -11,26 +11,10 @@
 # How will you deal with the fact that some letters are uppercase?
 # How will you handle edge cases?
 
-# separate into different methods
-# potential methods
-
-# next_vowel
-# next_cons
-
-# get_name_ready
-
- # SUMMARY
- # methods working standing alone
- # -shift
- # -get_name_ready
 
 
 
 
-
- # set global variables
-vowels = ['a','e','i','o','u']
-consonants = ['b', 'c', 'd', 'f', 'g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z']
 
 def get_name_ready(name_input)
   # split first and last name
@@ -50,8 +34,6 @@ def to_change(alias_name)
 
  	if char.ord == 97 || char.ord == 101 || char.ord == 105 || char.ord == 111 || char.ord == 117 
  		# call vowel_shift and send char --> how do i link them??
- 		# char
- 		puts "vowel"
  		if char == vowels[-1]
 		new_letter = vowels[0]
 		else
@@ -59,11 +41,8 @@ def to_change(alias_name)
 			new_letter = vowels[new_position]
 		end
  	elsif char.ord == 32
- 		# do nothing :)
- 		puts "space"
+ 		new_letter = " "
  	else
- 		puts "con"
- 		# call con_shift
  		if char == consonants[-1]
 		new_letter = consonants[0]
 		else
@@ -72,8 +51,6 @@ def to_change(alias_name)
 		end
  	 end 
  	end
-
- 	
 end  
 
 
@@ -88,63 +65,25 @@ end
 def con_shift(char)
 	consonants = ['b', 'c', 'd', 'f', 'g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z']
 	# i need this to return the letter and the array
-
 end	
 
-def shift(letter_array, char)
-
-	# shift should come from either vowel_shift or con_shift
-	# check to see if its the last one . edge case
-	new_letter = nil
-	if char == letter_array[-1]
-		new_letter = letter_array[0]
-	else
-	new_position = letter_array.index(char) + 1 
-		new_letter = letter_array[new_position]
-	end
-	
-end
-
-# DRIVER CODE for shift method
-# hello = ['a','e','i','o','u']
-
-# p shift(hello, 'a')
-# p shift(hello, 'e')
-# p shift(hello, 'i')
-# p shift(hello, 'o')
-# p shift(hello, 'u')
-# p shift(hello, 'a')
-
-
-
-
-# def start(string)
-# 	get_name_ready(string)
-# 	to_change(char)
-# 	p  "start"
-# end
-
-# get_name_ready("Natalie Ruiz")
-# to_change("Natalie Ruiz")
-# start("Natalie Ruiz")
 
 def change_name(original_name)
 	get_name_ready(original_name)
 	# to_change(alias_name) #alias_name is undefined, so how can I pass instead the return from get_name_ready to the method to_change????
 end
 
- final_answer = change_name"Felicia Torres"
- # p final_answer.to_change #120:in `<main>': private method `to_change' called for ["r", "u", "i", "z", " ", "n", "a", "t", "a", "l", "i", "e"]:Array (NoMethodError)
+final_answer = change_name"Felicia Torres"
+final_answer = to_change(final_answer)
 
-p final_answer = to_change(final_answer)
+final_answer = final_answer.join.capitalize
 
-puts "Felicia Torres" == "Vussit Gimodoe"
+final_answer == "Vussit gimodoe"
 
 
 
 # method shift needs to know if it will shift a vowel, a con, or nothing... I wanted to separate the methods, but now I am getting confused as to how to pass each one individually (both vowel shift and con shift to shift.) Maybe I should just add the shift change logic into each respective condition on method to_change?
 
 # I was also having problems earlier linking the methods so I just created a variable that would hold that answer.
-
 
 
