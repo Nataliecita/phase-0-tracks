@@ -11,8 +11,16 @@
 # How will you deal with the fact that some letters are uppercase?
 # How will you handle edge cases?
 
+# collect the names
+original_name = ""
 
+names_done = {}
 
+puts "Changing the your agents identity..."
+
+until original_name == 'quit'
+  puts "Enter the name of the agent you will like to change. Type 'quit' when you are done."
+  original_name = gets.chomp
 
 
 
@@ -54,36 +62,17 @@ def to_change(alias_name)
 end  
 
 
-def vowel_shift(to_change)
-	vowels   = ['a','e','i','o','u']
-	# scan to see what letter it is
-	# i need this to return the letter and the array
-	# p "it links!"
-	shift(vowels, char)
-end
-
-def con_shift(char)
-	consonants = ['b', 'c', 'd', 'f', 'g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z']
-	# i need this to return the letter and the array
-end	
-
-
 def change_name(original_name)
 	get_name_ready(original_name)
 	# to_change(alias_name) #alias_name is undefined, so how can I pass instead the return from get_name_ready to the method to_change????
 end
 
-final_answer = change_name"Felicia Torres"
+final_answer = change_name(original_name)
 final_answer = to_change(final_answer)
 
-final_answer = final_answer.join.capitalize
+ p final_answer = final_answer.join.capitalize
 
-final_answer == "Vussit gimodoe"
+end
 
-
-
-# method shift needs to know if it will shift a vowel, a con, or nothing... I wanted to separate the methods, but now I am getting confused as to how to pass each one individually (both vowel shift and con shift to shift.) Maybe I should just add the shift change logic into each respective condition on method to_change?
-
-# I was also having problems earlier linking the methods so I just created a variable that would hold that answer.
 
 
