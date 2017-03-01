@@ -1,5 +1,5 @@
 # SPECIES ------
-# Puppies 
+# Puppies
 
 # CHARACTERISTICS ----
 # Friendly: varies
