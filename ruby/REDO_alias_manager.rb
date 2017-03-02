@@ -12,16 +12,51 @@
 # How will you handle edge cases?
 
 # separate first and last name
-def split_name(name)
-  name = name.split(' ')
+def split_name(original_name)
+  original_name = original_name.downcase.split(' ')
 end  
 
-
 # swaps the first and last name
-def swap_names(name)
-  name = name.reverse
+def swap_names(name_split)
+	# swap and join and then split
+  name_split = name_split.reverse.join(' ').chars
 end
 
-# p swap_names(split_name("Natalie Ruiz"))
+name_split = swap_names(split_name("Felicia Torres"))
+
+# create vowel and consonant Constants
+Vowel = ["a","e","i","o","u","a"]
+Consonant =["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z","b"]
+
+def shift_letter(name_split)
+	name_split.map! do |letter|
+
+		if Vowel.include?(letter)
+			new_position = Vowel.index(letter) + 1
+			new_letter = Vowel[new_position]
+		elsif Consonant.include?(letter)
+			new_position = Consonant.index(letter) + 1
+			new_letter = Consonant[new_position]
+		else
+			new_letter= " "			
+		end	
+	end	
+end	
+
+alias_array = shift_letter(name_split)
+
+# join each letter together and separate an array of first and last
+alias_name = alias_array.join('').split(" ")
+p alias_name
+
+# capitalize and join to a string
+alias_name = alias_name.map(&:capitalize).join(" ")
+
+p alias_name
+
+
+
+
+
 
 
