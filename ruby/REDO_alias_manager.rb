@@ -1,15 +1,6 @@
 # take a spy's real name (e.g) "Felicia Torres"
 # creates a fake name
-
-
-
 # changes all of the vowels to the next vowel in 'aeiou', and all the consonants to the next consonant
-
-# things to consider
-# When will it be helpful to convert the string to an array to work with it more easily?
-# How will you figure out whether a letter is a vowel?
-# How will you deal with the fact that some letters are uppercase?
-# How will you handle edge cases?
 
 # separate first and last name
 def split_name(original_name)
@@ -41,9 +32,8 @@ def shift_letter(name_split)
 	end	
 end	
 
-
-
-
+# Create hash that collects names
+Spy_identity = {}
 
 def change_name(original_name)
 	name_split = swap_names(split_name(original_name))
@@ -54,17 +44,24 @@ def change_name(original_name)
 
 	# capitalize and join to a string
 	alias_name = alias_name.map(&:capitalize).join(" ")
+
+	# store in hash
+	Spy_identity[original_name] = alias_name
 end
 
 # UI
+puts "What name will you want to change? Type 'quit' when you are done"
 loop do
-	puts "What name will you want to change? Type 'quit' when you are done"
 	original_name = gets.chomp
 
 	break if original_name == 'quit'
-	p change_name(original_name)
-
+	puts change_name(original_name)
 end	
+
+Spy_identity.each {|key, value| puts "#{key} is actually #{value}." }
+
+# How can i refactor the code from shift letter to call just another method that makes that shift and just takes in the vowel...
+# also why did i have to make my Spy_identity a constant, I thought it would be okay since it was a global variable that then the method change_name would still be able to access it. 
 
 
 
