@@ -22,8 +22,6 @@ def swap_names(name_split)
   name_split = name_split.reverse.join(' ').chars
 end
 
-name_split = swap_names(split_name("Felicia Torres"))
-
 # create vowel and consonant Constants
 Vowel = ["a","e","i","o","u","a"]
 Consonant =["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z","b"]
@@ -43,16 +41,30 @@ def shift_letter(name_split)
 	end	
 end	
 
-alias_array = shift_letter(name_split)
 
-# join each letter together and separate an array of first and last
-alias_name = alias_array.join('').split(" ")
-p alias_name
 
-# capitalize and join to a string
-alias_name = alias_name.map(&:capitalize).join(" ")
 
-p alias_name
+
+def change_name(original_name)
+	name_split = swap_names(split_name(original_name))
+	alias_array = shift_letter(name_split)
+
+	# join each letter together and separate an array of first and last
+	alias_name = alias_array.join('').split(" ")
+
+	# capitalize and join to a string
+	alias_name = alias_name.map(&:capitalize).join(" ")
+end
+
+# UI
+loop do
+	puts "What name will you want to change? Type 'quit' when you are done"
+	original_name = gets.chomp
+
+	break if original_name == 'quit'
+	p change_name(original_name)
+
+end	
 
 
 
