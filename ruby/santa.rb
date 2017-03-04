@@ -20,7 +20,6 @@ class Santa
     puts @age = rand(140)
   end 
 
-
   def celebrate_birthday
     @age = @age + 1
   end
@@ -29,24 +28,11 @@ class Santa
    position = @reindeer_ranking.rindex(reindeer_name)
    @reindeer_ranking.insert(-1, @reindeer_ranking.delete_at(position))
   end  
-  # # setter method
-  # def gender(new_gender)
-  #   @gender = new_gender
-  # end 
-
-  # # getter methods
-  # def age(int)
-  #  puts  @age = int
-  # end 
-
 
   def gender(change_gender)
   @gender = change_gender
   end  
 
-  # def ethnicity
-  #   @ethnicity
-  # end  
  end 
 
 # santas = []
@@ -54,7 +40,6 @@ example_genders = ["agender", "female", "bigender", "male", "female", "gender fl
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 example_genders.length.times do |i|
   santa =  Santa.new(example_genders.sample, example_ethnicities.sample)
-  # santa.age(rand(140))
   puts "------"
 end
 
@@ -68,7 +53,6 @@ end
 # arnold.gender("bigender")
 
 # p santas
-# p arnold.age(rand(140))
 # p arnold.celebrate_birthday
 # p arnold.speak
 
