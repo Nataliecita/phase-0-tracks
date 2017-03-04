@@ -1,5 +1,9 @@
 class Santa
 
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
+
+
   def speak
     puts "Ho, ho, ho! Haaaappy holidays"
   end 
@@ -8,22 +12,50 @@ class Santa
     puts "That was a good #{cookie} cookie!"
   end  
 
-  def initialize(gender, ethinicity)
+  def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
     @gender = gender
-    @entnicity = ethinicity
-  end 
-
-  def reindeer_ranking
+    @entnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    @age = 0
   end 
 
-  def age
-    @age = 0
+
+  def celebrate_birthday
+    @age = @age + 1
+  end
+
+  def get_mad_at(reindeer_name)
+   position = @reindeer_ranking.rindex(reindeer_name)
+   @reindeer_ranking.insert(-1, @reindeer_ranking.delete_at(position))
   end  
+
+  # # setter method
+  # def gender(new_gender)
+  #   @gender = new_gender
+  # end 
+
+  # # getter methods
+  # def age
+  #   @age
+  # end 
+
+  # def ethnicity
+  #   @ethnicity
+  # end  
+   
  end 
 
- # santa = Santa.new
+santas = []
+ charlie = Santa.new("female","white")
+
+ santas << charlie
+
+p santas
+charlie.gender = "male"
+p santas
+
+
 
  # santa.speak
 
