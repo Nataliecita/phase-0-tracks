@@ -14,10 +14,10 @@ class Santa
 
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
-    @gender = gender
-    @entnicity = ethnicity
+    puts @gender = gender
+    puts @entnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
+    puts @age = rand(140)
   end 
 
 
@@ -35,39 +35,42 @@ class Santa
   # end 
 
   # # getter methods
-  # def age
-  #   @age
+  # def age(int)
+  #  puts  @age = int
   # end 
+
+
+  def gender(change_gender)
+  @gender = change_gender
+  end  
 
   # def ethnicity
   #   @ethnicity
   # end  
  end 
 
-santas = []
+# santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-example_genders.length.times do 
-  santas << Santa.new(example_genders.sample, example_ethnicities.sample)
-  p santas
+example_genders.length.times do |i|
+  santa =  Santa.new(example_genders.sample, example_ethnicities.sample)
+  # santa.age(rand(140))
   puts "------"
 end
 
-# santas = []
-#  charlie = Santa.new("female","white")
-
-#  santas << charlie
+# driver code
+# arnold = Santa.new("agender","black")
+# arnold.get_mad_at("Rudolph")
+# santas << arnold
 
 # p santas
-# charlie.gender = "male"
+
+# arnold.gender("bigender")
+
 # p santas
-
-
-
- # santa.speak
-
- # santa.eat_milk_and_cookies("Raisin oatmeal")
-
+# p arnold.age(rand(140))
+# p arnold.celebrate_birthday
+# p arnold.speak
 
 
 
