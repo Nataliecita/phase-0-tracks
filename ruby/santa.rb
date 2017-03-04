@@ -29,7 +29,6 @@ class Santa
    position = @reindeer_ranking.rindex(reindeer_name)
    @reindeer_ranking.insert(-1, @reindeer_ranking.delete_at(position))
   end  
-
   # # setter method
   # def gender(new_gender)
   #   @gender = new_gender
@@ -43,17 +42,25 @@ class Santa
   # def ethnicity
   #   @ethnicity
   # end  
-   
  end 
 
 santas = []
- charlie = Santa.new("female","white")
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+example_genders.length.times do 
+  santas << Santa.new(example_genders.sample, example_ethnicities.sample)
+  p santas
+  puts "------"
+end
 
- santas << charlie
+# santas = []
+#  charlie = Santa.new("female","white")
 
-p santas
-charlie.gender = "male"
-p santas
+#  santas << charlie
+
+# p santas
+# charlie.gender = "male"
+# p santas
 
 
 
@@ -61,13 +68,6 @@ p santas
 
  # santa.eat_milk_and_cookies("Raisin oatmeal")
 
- # DRIVER CODE
-#  santas = []
-# example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-# example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
-# example_genders.length.times do |i|
-#   santas << Santa.new(example_genders[i], example_ethnicities[i])
-#   p santas
-#   puts "------"
-# end
+
+
 
