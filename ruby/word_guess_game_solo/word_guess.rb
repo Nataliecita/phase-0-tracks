@@ -30,6 +30,9 @@ class Wordgame
 		@word_output
 	end	
 
+	def update_word(letter)
+	end	
+
 
 
 	# but then word should be an array...

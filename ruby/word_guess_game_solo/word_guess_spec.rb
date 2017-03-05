@@ -14,8 +14,8 @@ describe Wordgame do
  		expect(game.word_output).to eq ["","","","","","","","",""]
  	end		
 
-	# it "update the word, if given the 'a' letter from the letter" do 
-	# 	game.update_word("a")
-	# 	expect(game.update_word).to	eq ""
-	
+	it "update the word, if given the 'a' letter from the letter" do 
+		# game.update_word("a")
+		expect(game.update_word("a")).to	eq ["","","","","a","","","",""]
+	end
 end
