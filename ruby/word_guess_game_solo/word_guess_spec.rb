@@ -22,6 +22,7 @@ describe Wordgame do
 
 	it "update the word, if given the 'a' letter from the letter" do 
 		# game.update_word("a")
+		game.letter_present("a")
 		expect(game.update_word("a")).to	eq ["","","","","a","","","",""]
 	end
 end

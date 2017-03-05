@@ -40,9 +40,9 @@ class Wordgame
 		end
 	end
 
-	def update_word(letter, index)
+	def update_word(letter)
 		@word_output.map! do |x|
-			if x == index
+			if x == @index
 				x = letter
 			end		
 		end	
