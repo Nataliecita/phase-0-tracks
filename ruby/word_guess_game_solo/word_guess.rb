@@ -17,9 +17,19 @@ class Wordgame
 		@is_over = false		
 	end 
 
+
 	def get_word
 		@word
 	end	
+
+	def word_output
+		@word_output = @word
+		@word_output.map! do |letter|
+			letter = ""
+		end
+		@word_output
+	end	
+
 
 
 	# but then word should be an array...
