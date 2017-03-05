@@ -14,6 +14,12 @@ describe Wordgame do
  		expect(game.word_output).to eq ["","","","","","","","",""]
  	end		
 
+ 	it "returns the index of the letter if its in the word word" do
+
+ 		expect(game.letter_present("a")).to eq 4
+
+ 	end	
+
 	it "update the word, if given the 'a' letter from the letter" do 
 		# game.update_word("a")
 		expect(game.update_word("a")).to	eq ["","","","","a","","","",""]

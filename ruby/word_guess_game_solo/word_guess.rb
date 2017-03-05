@@ -9,14 +9,13 @@
 # ---name the class
 class Wordgame
 	attr_reader :word, :is_over
-	attr_accessor :update_word 
+	attr_accessor :update_word , :index
 
 	def initialize(word)
 		# slpit word to chars and store in an array
 		@word = word.split("")
 		@is_over = false		
 	end 
-
 
 	def get_word
 		@word
@@ -30,8 +29,27 @@ class Wordgame
 		@word_output
 	end	
 
-	def update_word(letter)
+	# check if letter is there
+	def letter_present(letter)
+		if @word.include?(letter)
+			# call update_word method
+			@index = @word.index(letter) #however, if the letter appears in two places, it will only look for the first instance. 
+			# update_word(letter).. ho
+	
+			#else delete from counter once counter is made 
+		end
+	end
+
+	def update_word(letter, index)
+		@word_output.map! do |x|
+			if x == index
+				x = letter
+			end		
+		end	
+		@word_output
 	end	
+
+	
 
 
 
