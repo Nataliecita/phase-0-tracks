@@ -12,13 +12,19 @@ class Wordgame
 	attr_accessor :update_word 
 
 	def initialize(word)
-		@word = word
-		@is_over = false
+		# slpit word to chars and store in an array
+		@word = word.split("")
+		@is_over = false		
 	end 
 
 	def get_word
 		@word
 	end	
+
+
+	# but then word should be an array...
+
+
 # ---what to pass on initialize?
 # pass one argument whihc will be the word
 
