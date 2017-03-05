@@ -16,7 +16,7 @@ def create_list(items)
   shopping_list
 end
 final_list = create_list("banana apple pear")
-puts final_list
+
 # Method to add an item to a list
 # input: list (shopping_list), item name, and optional quantity
 # steps:
@@ -25,7 +25,6 @@ puts final_list
   # use push method to add item to hash
 # output: shopping_list with new item added to end
 def add_item(list, item, quantity)
-  #list = item.push
     list[item] = quantity.to_i
     list
 end
@@ -62,3 +61,28 @@ def print_list(grocery_list)
   grocery_list.each { |item, quantity| puts "You need #{quantity} #{item}"}
 end
 print_list(final_list)
+
+# Release 1 tests:
+# grocery_list = make_list("apples bananas oranges")
+# add_item(grocery_list, "banana", 8)
+# delete_item(grocery_list, "pizza")
+# update_quantity(grocery_list, "carrots", 5)
+# p print_list(grocery_list)
+
+# What did you learn about pseudocode from working on this challenge?
+# A:I learned that it doesnt have to be complicated and that separating the methods with the input and output made the overall flow easier.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+# A:In this case using a hash was more beneficial because it allowed us to associate things together with each key. We were able to have that key value pair. In an array, it would have had to be bunched up together. I think it would have been more complicated.
+
+# What does a method return?
+# A:a method returns the last line
+
+# What kind of things can you pass into methods as arguments?
+#A: You can pass anything really. Strings, numbers, symbols, other methods
+
+#How can you pass information between methods?
+#A: you can pass it as if it were another variable
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+#A: iterating through arrays seemed to get better for me as well as understanding different built in methods. I think the idea of accessing hashes is still troublesome to me, as well as not over complicating things. I need to learn how to break things more apart and keep it simple
