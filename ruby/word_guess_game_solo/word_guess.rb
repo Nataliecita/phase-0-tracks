@@ -6,7 +6,6 @@
 # The guessing player receives continual feedback on the current state of the word. So if the secret word is "unicorn", the user will start out seeing something like "_ _ _ _ _ _ _", which would become "_ _ _ c _ _ _" after the user enters a guess of "c".
 # The user should get a congratulatory message if they win, and a taunting message if they lose.
 
-# ---name the class
 class Wordgame
 	attr_reader :word, :is_over
 	attr_accessor :update_word , :index
@@ -14,19 +13,15 @@ class Wordgame
 	def initialize(word)
 		# slpit word to chars and store in an array
 		@word = word.split("")
-		@is_over = false		
+		@is_over = false	
+		@word_output = word_output
 	end 
 
-	def get_word
-		@word
-	end	
 
 	def word_output
-		@word_output = @word
-		@word_output.map! do |letter|
+		@word.map do |letter|
 			letter = ""
 		end
-		@word_output
 	end	
 
 	# check if letter is there
@@ -40,16 +35,26 @@ class Wordgame
 		end
 	end
 
-	def update_word(letter)
-		@word_output.map! do |x|
-			if x == @index
-				x = letter
-			end		
+	def update_word(guess_letter)
+		
+	
+		if @word.include?(guess_letter)
+
+	
+			@word.each_with_index do |letter, index|
+				if guess_letter == letter
+					@word_output[index] = guess_letter
+				end	
+
+			end
+		
 		end	
 		@word_output
 	end	
 
-	
+	def display_word
+		word_output.join
+	end
 
 
 
