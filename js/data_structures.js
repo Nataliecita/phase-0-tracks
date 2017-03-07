@@ -9,4 +9,13 @@ colors.push("garnet");
 
 names.push("Edward");
 
-// console.log(colors, names); 
+
+var horses =  {};
+
+
+
+names.forEach(function(value,index){
+  horses[value] = colors[index];
+});
+
+console.log(horses);
