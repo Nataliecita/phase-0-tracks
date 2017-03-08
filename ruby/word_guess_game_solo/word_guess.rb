@@ -20,7 +20,7 @@ class Wordgame
 
 	def word_output
 		@word.map do |letter|
-			letter = ""
+			letter = "_"
 		end
 	end	
 
