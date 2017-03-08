@@ -11,13 +11,21 @@ describe Wordgame do
 
  		game.word_output
 
- 		expect(game.word_output).to eq ["","","","","","","","",""]
+ 		expect(game.word_output).to eq ["_","_","_","_","_","_","_","_","_"]
  	end		
 
 
 
-	it "update the word, if given the 'p' letter from the letter" do 
+	it "update the word, if given the 'p' letter and the 'e' from the letter" do 
 
-		expect(game.update_word("p")).to	eq ["p","","","","","p","p","",""]
+		expect(game.update_word("p")).to	eq ["p","_","_","_","_","p","p","_","_"]
+
+    # make sure it updates from previous guesses
+    expect(game.update_word("e")).to eq ["p","_","_","e","_","p","p","_","e"]
+
 	end
+
+
+
+
 end
