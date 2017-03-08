@@ -15,6 +15,7 @@ class Wordgame
 		@word = word.split("")
 		@is_over = false	
 		@word_output = word_output
+		@guessed_letters = []
 	end 
 
 
@@ -23,6 +24,7 @@ class Wordgame
 			letter = "_"
 		end
 	end	
+
 
 	# # method that calculates guesses allowed
 	# def guesses_allowed
@@ -38,15 +40,14 @@ class Wordgame
 
 	def update_word(guess_letter)
 		if @word.include?(guess_letter)
-
 	
 			@word.each_with_index do |letter, index|
 				if guess_letter == letter
 					@word_output[index] = guess_letter
 				end	
-
 			end
-		# else 
+			# if letter is not in array og guessed letters, we want to  add that guessed letter to our array and take away from our counter
+		# elsif @word.include?
 		# 		allowed_guess -= 1 
 		end	
 		@word_output
@@ -62,29 +63,9 @@ class Wordgame
 
 
 
-	# but then word should be an array...
-
-
-# ---what to pass on initialize?
-# pass one argument whihc will be the word
-
-
 # ----what should be overwritten?
 # guesses are limited, so they should be overwritten each time there is a guess
 # guesses_allowed
-
-# ----what should be readable??
-
-#------ What methods should there be?
-
-# guesses_allowed based on length of word
-
-# update word
-# feedback
-	# should just return the word from update word?
-
-#game won
-
 
 end	
 
