@@ -24,6 +24,17 @@ class Wordgame
 		end
 	end	
 
+	# method that calculates guesses allowed
+	def guesses_allowed
+		if @word.length  > 12 
+			allowed_guess = 8
+		elsif @word.length <= 12 && @word.length > 8
+			allowed_guess = 5
+		else
+			allowed_guess = 4
+		end		 	
+	end	
+
 	# check if letter is there
 	def letter_present(letter)
 		if @word.include?(letter)
@@ -47,9 +58,14 @@ class Wordgame
 				end	
 
 			end
-		
+		else 
+				allowed_guess -= 1 
 		end	
 		@word_output
+	end	
+
+	def is_over
+		is_over = false
 	end	
 
 	def display_word
