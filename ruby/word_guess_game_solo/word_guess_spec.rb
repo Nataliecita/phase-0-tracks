@@ -24,7 +24,7 @@ describe Wordgame do
 	end
 
   it "does not update word and adds the letter to our guess_letter array" do
-
+ # p @guessed_letters.class
     expect(game.update_word("x")).to eq ["_","_","_","_","_","_","_","_","_"]
     expect(game.guessed_letters).to eq ["x"]
   end
