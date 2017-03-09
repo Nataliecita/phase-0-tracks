@@ -70,11 +70,6 @@ class Wordgame
 	# end
 
 
-
-# ----what should be overwritten?
-# guesses are limited, so they should be overwritten each time there is a guess
-# guesses_allowed
-
 end	
 
 
