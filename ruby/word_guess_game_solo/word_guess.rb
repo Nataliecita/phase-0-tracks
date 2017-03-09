@@ -60,9 +60,16 @@ class Wordgame
 	 	@allowed_guess -= 1
 	 end	
 
-	# def is_over
-	# 	is_over = false
-	# end	
+	def is_over
+		if @allowed_guess = 0
+			puts "Sorry. You are not a word guesser master."
+			is_over = true
+		elsif @word_output == @word
+			puts "We are looking at a winner... Great job"
+			is_over = true
+		end	
+
+	end	
 
 	# def display_word
 	# 	word_output.join

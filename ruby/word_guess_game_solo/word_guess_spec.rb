@@ -38,4 +38,13 @@ describe Wordgame do
     expect(game.allowed_guess).to eq 4
   end 
 
+  it "loses game" do
+    game.update_word("x")
+    game.update_word("y")
+    game.update_word("z")
+    game.update_word("l")
+    game.update_word("u")
+    expect(game.is_over).to eq true
+  end
+
 end  
