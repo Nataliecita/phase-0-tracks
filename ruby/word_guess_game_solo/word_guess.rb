@@ -7,7 +7,7 @@
 # The user should get a congratulatory message if they win, and a taunting message if they lose.
 
 class Wordgame
-	attr_reader :word, :is_over
+	attr_reader :word, :is_over, :guessed_letters
 	attr_accessor :update_word 
 
 	def initialize(word)
@@ -15,8 +15,8 @@ class Wordgame
 		@word = word.split("")
 		@is_over = false	
 		@word_output = word_output
+		@guessed_letters = []
 	end 
-
 
 	def word_output
 		@word.map do |letter|
@@ -24,33 +24,42 @@ class Wordgame
 		end
 	end	
 
-	# # method that calculates guesses allowed
-	# def guesses_allowed
-	# 	if @word.length  > 12 
-	# 		allowed_guess = 8
-	# 	elsif @word.length <= 12 && @word.length > 8
-	# 		allowed_guess = 5
-	# 	else
-	# 		allowed_guess = 4
-	# 	end		 	
-	# end	
+	
+	# method that calculates guesses allowed
+	def guesses_allowed
+		if @word.length  > 12 
+			@allowed_guess = 8
+		elsif @word.length <= 12 && @word.length > 8
+			@allowed_guess = 5
+		else
+			@allowed_guess = 4
+		end		
+		# @allowed_guess 	
+	end	
 
 
 	def update_word(guess_letter)
 		if @word.include?(guess_letter)
-
 	
 			@word.each_with_index do |letter, index|
 				if guess_letter == letter
 					@word_output[index] = guess_letter
 				end	
-
 			end
-		# else 
-		# 		allowed_guess -= 1 
+		else
+			if @guessed_letters.include?(guess_letter)
+			"You've already used that letter"
+			else
+				# take_away_guess
+				@guessed_letters << guess_letter
+			end	
 		end	
 		@word_output
 	end	
+
+	# def take_away_guess
+	# 	@allowed_guess -= 1
+	# end	
 
 	# def is_over
 	# 	is_over = false
@@ -62,29 +71,9 @@ class Wordgame
 
 
 
-	# but then word should be an array...
-
-
-# ---what to pass on initialize?
-# pass one argument whihc will be the word
-
-
 # ----what should be overwritten?
 # guesses are limited, so they should be overwritten each time there is a guess
 # guesses_allowed
-
-# ----what should be readable??
-
-#------ What methods should there be?
-
-# guesses_allowed based on length of word
-
-# update word
-# feedback
-	# should just return the word from update word?
-
-#game won
-
 
 end	
 
