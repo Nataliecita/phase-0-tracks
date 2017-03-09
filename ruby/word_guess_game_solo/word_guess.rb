@@ -28,12 +28,13 @@ class Wordgame
 	# method that calculates guesses allowed
 	def guesses_allowed
 		if @word.length  > 12 
-			allowed_guess = 8
+			@allowed_guess = 8
 		elsif @word.length <= 12 && @word.length > 8
-			allowed_guess = 5
+			@allowed_guess = 5
 		else
-			allowed_guess = 4
-		end		 	
+			@allowed_guess = 4
+		end		
+		# @allowed_guess 	
 	end	
 
 
@@ -49,12 +50,16 @@ class Wordgame
 			if @guessed_letters.include?(guess_letter)
 			"You've already used that letter"
 			else
+				# take_away_guess
 				@guessed_letters << guess_letter
-				# take away from allowed guesses
 			end	
 		end	
 		@word_output
 	end	
+
+	# def take_away_guess
+	# 	@allowed_guess -= 1
+	# end	
 
 	# def is_over
 	# 	is_over = false

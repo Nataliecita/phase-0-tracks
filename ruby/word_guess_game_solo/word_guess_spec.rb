@@ -33,5 +33,10 @@ describe Wordgame do
     expect(game.guesses_allowed).to eq 5
   end  
 
+  # it "takes away from allowed guesses based on incorrect and unused input" do
+  #   game.update_word("x")
+  #   # game.take_away_guess
+  #   expect(game.guesses_allowed).to eq 4
+  # end 
 
 end  
