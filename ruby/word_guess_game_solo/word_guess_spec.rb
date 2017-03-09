@@ -29,4 +29,9 @@ describe Wordgame do
     expect(game.guessed_letters).to eq ["x"]
   end
 
+  it "tells us the allowed guesses they have based on the word length" do
+    expect(game.guesses_allowed).to eq 5
+  end  
+
+
 end  

@@ -7,7 +7,7 @@
 # The user should get a congratulatory message if they win, and a taunting message if they lose.
 
 class Wordgame
-	attr_reader :word, :is_over , :guessed_letters
+	attr_reader :word, :is_over, :guessed_letters
 	attr_accessor :update_word 
 
 	def initialize(word)
@@ -18,7 +18,6 @@ class Wordgame
 		@guessed_letters = []
 	end 
 
-
 	def word_output
 		@word.map do |letter|
 			letter = "_"
@@ -26,16 +25,16 @@ class Wordgame
 	end	
 
 	
-	# # method that calculates guesses allowed
-	# def guesses_allowed
-	# 	if @word.length  > 12 
-	# 		allowed_guess = 8
-	# 	elsif @word.length <= 12 && @word.length > 8
-	# 		allowed_guess = 5
-	# 	else
-	# 		allowed_guess = 4
-	# 	end		 	
-	# end	
+	# method that calculates guesses allowed
+	def guesses_allowed
+		if @word.length  > 12 
+			allowed_guess = 8
+		elsif @word.length <= 12 && @word.length > 8
+			allowed_guess = 5
+		else
+			allowed_guess = 4
+		end		 	
+	end	
 
 
 	def update_word(guess_letter)
@@ -50,7 +49,7 @@ class Wordgame
 			if @guessed_letters.include?(guess_letter)
 			"You've already used that letter"
 			else
-				@guessed_letters <<(guess_letter)
+				@guessed_letters << guess_letter
 				# take away from allowed guesses
 			end	
 		end	
