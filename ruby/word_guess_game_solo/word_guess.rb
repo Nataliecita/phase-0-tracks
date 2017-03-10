@@ -50,12 +50,12 @@ class Wordgame
 		# check to see if game is over
 		is_over
 		# display word
-		display_word
+		# display_word
 	end	
 
-	# def display_word
-	# 	puts @word_output.join
-	# end	
+	def display_word
+		@word_output.join
+	end	
 
 	 def take_away_guess
 	 	@allowed_guess -= 1
