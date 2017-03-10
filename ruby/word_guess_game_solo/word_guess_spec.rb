@@ -7,11 +7,9 @@ describe Wordgame do
 		expect(game.word).to eq ["p","i","n","e","a","p","p","l","e"]
 	end	
 
- 	it "deletes the actual character from the word passed, leaves spaces empty" do
-
- 		game.word_output
-
- 		expect(game.word_output).to eq ["_","_","_","_","_","_","_","_","_"]
+ 	it "format word returns array of the length of the initialized word" do
+    # testing the return of format_word rather than the value
+ 		expect(game.format_word).to eq ["_","_","_","_","_","_","_","_","_"]
  	end		
 
 	it "update the word, if given the 'p' letter and the 'e' from the letter" do 
@@ -23,14 +21,21 @@ describe Wordgame do
 
 	end
 
-  it "does not update word and adds the letter to our guess_letter array" do
+  it " does not update word and adds the letter to our guess_letter array" do
  # p @guessed_letters.class
     expect(game.update_word("x")).to eq ["_","_","_","_","_","_","_","_","_"]
+
+    # make separate test for this action. adding the incorrect guess to our guessed letters array
+
     expect(game.guessed_letters).to eq ["x"]
   end
 
   it "tells us the allowed guesses they have based on the word length" do
     expect(game.guesses_allowed).to eq 5
+
+    game2 = Wordgame.new("hi")
+    expect(game2.guesses_allowed).to eq 4
+
   end  
 
   it "takes away from allowed guesses based on incorrect and unused input" do

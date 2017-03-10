@@ -1,16 +1,18 @@
 class Wordgame
+
+
 	attr_reader :word, :is_over, :guessed_letters, :allowed_guess 
 
 	def initialize(word)
 		# slpit word to chars and store in an array
 		@word = word.split("")
 		@is_over = false	
-		@word_output = word_output
+		@word_output = format_word
 		@guessed_letters = []
 		@allowed_guess = guesses_allowed
 	end 
 
-	def word_output
+	def format_word
 		@word.map do |letter|
 			letter = "_"
 		end
@@ -51,9 +53,9 @@ class Wordgame
 		display_word
 	end	
 
-	def display_word
-		puts @word_output.join
-	end	
+	# def display_word
+	# 	puts @word_output.join
+	# end	
 
 	 def take_away_guess
 	 	@allowed_guess -= 1
@@ -71,26 +73,26 @@ class Wordgame
 	end	
 end	
 
-# DRIVER CODE
-game = Wordgame.new("bootcamp")
+# # DRIVER CODE
+# game = Wordgame.new("bootcamp")
 
-game.update_word("n")
+# game.update_word("n")
 
-# p game.word_output
-# p game.guessed_letters
+# # p game.word_output
+# # p game.guessed_letters
 
-game.update_word("p")
- game.update_word("a")
+# game.update_word("p")
+#  game.update_word("a")
 
-game.update_word("o")
-game.update_word("b")
-# incorrect guess
-game.update_word("x")
+# game.update_word("o")
+# game.update_word("b")
+# # incorrect guess
+# game.update_word("x")
 
- game.update_word("c")
- game.update_word("m")
+#  game.update_word("c")
+#  game.update_word("m")
 
- game.update_word("t")
+#  game.update_word("t")
 
 
 
