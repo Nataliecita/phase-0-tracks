@@ -54,7 +54,8 @@ describe Wordgame do
     game.update_word("i")
     game.update_word("l")
     game.update_word("e")
-    
+    game.update_word("n")
+
     expect(game.is_over).to eq true
   end
 

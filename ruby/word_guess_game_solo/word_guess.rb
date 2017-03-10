@@ -1,11 +1,3 @@
-# Pseudocode a class for a word-guessing game that meets the following specifications. Assume your driver code will handle input and output as far as the user is concerned. In other words, write a class designed for a computer program to use, not one designed for a human to use directly, then use driver code to bridge the gap between human and Ruby object.
-
-# One user can enter a word (or phrase, if you would like your game to support that), and another user attempts to guess the word.
-# Guesses are limited, and the number of guesses available is related to the length of the word.
-# Repeated guesses do not count against the user.
-# The guessing player receives continual feedback on the current state of the word. So if the secret word is "unicorn", the user will start out seeing something like "_ _ _ _ _ _ _", which would become "_ _ _ c _ _ _" after the user enters a guess of "c".
-# The user should get a congratulatory message if they win, and a taunting message if they lose.
-
 class Wordgame
 	attr_reader :word, :is_over, :guessed_letters, :allowed_guess 
 
@@ -53,7 +45,14 @@ class Wordgame
 				@guessed_letters << guess_letter
 			end	
 		end	
-		@word_output
+		# check to see if game is over
+		is_over
+		# display word
+		display_word
+	end	
+
+	def display_word
+		puts @word_output.join
 	end	
 
 	 def take_away_guess
@@ -65,12 +64,38 @@ class Wordgame
 		if @word_output == @word
 			puts "We are looking at a winner... Great job"
 			is_over = true
-		elsif @allowed_guess = 0
+		elsif @allowed_guess == 0
 			puts "Sorry. You are not a word guesser master."
 			is_over = true	
 		end	
 	end	
 end	
+
+# DRIVER CODE
+game = Wordgame.new("bootcamp")
+
+game.update_word("n")
+
+# p game.word_output
+# p game.guessed_letters
+
+game.update_word("p")
+ game.update_word("a")
+
+game.update_word("o")
+game.update_word("b")
+# incorrect guess
+game.update_word("x")
+
+ game.update_word("c")
+ game.update_word("m")
+
+ game.update_word("t")
+
+
+
+
+
 
 
 
