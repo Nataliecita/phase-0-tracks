@@ -1,16 +1,18 @@
 class Wordgame
+
+
 	attr_reader :word, :is_over, :guessed_letters, :allowed_guess 
 
 	def initialize(word)
 		# slpit word to chars and store in an array
 		@word = word.split("")
 		@is_over = false	
-		@word_output = word_output
+		@word_output = format_word
 		@guessed_letters = []
 		@allowed_guess = guesses_allowed
 	end 
 
-	def word_output
+	def format_word
 		@word.map do |letter|
 			letter = "_"
 		end
@@ -45,6 +47,7 @@ class Wordgame
 				@guessed_letters << guess_letter
 			end	
 		end	
+		@word_output
 		# check to see if game is over
 		is_over
 		# display word
@@ -52,7 +55,7 @@ class Wordgame
 	end	
 
 	def display_word
-		puts @word_output.join
+		p @word_output
 	end	
 
 	 def take_away_guess
@@ -63,11 +66,12 @@ class Wordgame
 	
 		if @word_output == @word
 			puts "We are looking at a winner... Great job"
-			is_over = true
-		elsif @allowed_guess == 0
+			@is_over = true
+		elsif @allowed_guess < 1
 			puts "Sorry. You are not a word guesser master."
-			is_over = true	
+			@is_over = true	
 		end	
+
 	end	
 end	
 
