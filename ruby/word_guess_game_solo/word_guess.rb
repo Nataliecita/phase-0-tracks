@@ -47,14 +47,15 @@ class Wordgame
 				@guessed_letters << guess_letter
 			end	
 		end	
+		@word_output
 		# check to see if game is over
 		is_over
 		# display word
-		# display_word
+		display_word
 	end	
 
 	def display_word
-		@word_output.join
+		p @word_output
 	end	
 
 	 def take_away_guess
@@ -65,34 +66,35 @@ class Wordgame
 	
 		if @word_output == @word
 			puts "We are looking at a winner... Great job"
-			is_over = true
-		elsif @allowed_guess == 0
+			@is_over = true
+		elsif @allowed_guess < 1
 			puts "Sorry. You are not a word guesser master."
-			is_over = true	
+			@is_over = true	
 		end	
+
 	end	
 end	
 
-# # DRIVER CODE
-# game = Wordgame.new("bootcamp")
+# DRIVER CODE
+game = Wordgame.new("bootcamp")
 
-# game.update_word("n")
+game.update_word("n")
 
-# # p game.word_output
-# # p game.guessed_letters
+# p game.word_output
+# p game.guessed_letters
 
-# game.update_word("p")
-#  game.update_word("a")
+game.update_word("p")
+ game.update_word("a")
 
-# game.update_word("o")
-# game.update_word("b")
-# # incorrect guess
-# game.update_word("x")
+game.update_word("o")
+game.update_word("b")
+# incorrect guess
+game.update_word("x")
 
-#  game.update_word("c")
-#  game.update_word("m")
+ game.update_word("c")
+ game.update_word("m")
 
-#  game.update_word("t")
+ game.update_word("t")
 
 
 

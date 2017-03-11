@@ -45,7 +45,29 @@ describe Wordgame do
 
 
 
-  #   expect(game.is_over).to eq true
-  # end
+  it "loses game" do
+    game.update_word("x")
+    game.update_word("y")
+    game.update_word("z")
+    game.update_word("l")
+    game.update_word("u")
+    game.update_word("o")
+
+
+    expect(game.is_over).to eq true
+  end
+
+    it "wins game" do
+    game.update_word("a")
+    game.update_word("p")
+    game.update_word("n")
+    game.update_word("i")
+    game.update_word("l")
+    game.update_word("e")
+    game.update_word("n")
+
+    expect(game.is_over).to eq true
+  end
+
 
 end  
