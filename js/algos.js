@@ -25,23 +25,36 @@ function long(array) {
 function keyvalue (object1, object2) {
   var obj1 = Object.keys(object1);
   var obj2 = Object.keys(object2);
+  var samekey1
+  var samekey2
 
   for( var i = 0; i < obj1.length; i++ ){
     for (var j = 0; j < obj2.length; j++) {
      if  (obj1[i] == obj2[j]) {
-       console.log("it matches");
+       // save that key somewhere
+       samekey1 = obj1[i]
+       samekey2 = obj2[j]
      }
     }
   }
+
+  // now search that key
+  if (object1[samekey1] == object2[samekey2]) {
+    return true
+  }
+  else
+    return false
 }
 
 
+// write a function that takes an integer for length, and builds and returns an array of strings of the given length. return an array of random words based on the int it was passed. words should be at least 1 letter and max 10 letters
 
+
+
+// driver code for release 1
 one = {0: 'a', 1: 'b', 2: 'c'}
-two = {3: 'd', 4: 'e', 2: 'f'}
-
-
-keyvalue(one,two)
+two = {3: 'd', 4: 'e', 2: 'c'}
+console.log(keyvalue(one,two))
 
 
 
@@ -51,7 +64,6 @@ keyvalue(one,two)
 
 // driver code for release 0 
 yas = ["long phrase","longest phrase","longer phrase"];
-
 console.log(long(yas));
 
 
