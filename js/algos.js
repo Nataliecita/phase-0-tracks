@@ -53,20 +53,30 @@ function keyvalue (object1, object2) {
 // create empty array and add each word there
 
 function ranword(int) {
-  ran_words = [];
-  counter = 0
+  var ran_words = [];
+  var counter = 0
+  var letters = "abcdefghijklmnopqrstuvwxyz"
+  
   while (counter < int) {
-    // create random word
+    // find out the length of that word
+      word_length = Math.floor((Math.random() * 10) + 1)
+      var word = " ";
+    // do a for loop ? or while loop. some loop
+      for (var i = 0; i < word_length; i++){
+          word +=  letters.charAt(Math.floor(Math.random() * letters.length));
 
-    // push random word to array
-
-    // increase counter
+        // push random word to array
+        ran_words.push(word);
+        // increase counter
+        counter += 1;
+      }
   }
-
   // return array
+  return ran_words;
 }
 
-
+// driver code for release 2
+console.log(ranword(3)); 
 
 
 // driver code for release 1
