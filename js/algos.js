@@ -22,8 +22,26 @@ function long(array) {
 
 // find method that looks at each key, so two for loops.. if one matches with the other we want to save it and thn look at that value inside of it
 
+function keyvalue (object1, object2) {
+  var obj1 = Object.keys(object1);
+  var obj2 = Object.keys(object2);
+
+  for( var i = 0; i < obj1.length; i++ ){
+    for (var j = 0; j < obj2.length; j++) {
+     if  (obj1[i] == obj2[j]) {
+       console.log("it matches");
+     }
+    }
+  }
+}
 
 
+
+one = {0: 'a', 1: 'b', 2: 'c'}
+two = {3: 'd', 4: 'e', 2: 'f'}
+
+
+keyvalue(one,two)
 
 
 
