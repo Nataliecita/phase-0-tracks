@@ -38,7 +38,7 @@ function keyvalue (object1, object2) {
     }
   }
 
-  // now search that key
+  // now search that key.. 
   if (object1[samekey1] == object2[samekey2]) {
     return true
   }
@@ -48,6 +48,24 @@ function keyvalue (object1, object2) {
 
 
 // write a function that takes an integer for length, and builds and returns an array of strings of the given length. return an array of random words based on the int it was passed. words should be at least 1 letter and max 10 letters
+
+// create function with one int being passed in as an argument. that int will inidicate how many times we will do something
+// create empty array and add each word there
+
+function ranword(int) {
+  ran_words = [];
+  counter = 0
+  while (counter < int) {
+    // create random word
+
+    // push random word to array
+
+    // increase counter
+  }
+
+  // return array
+}
+
 
 
 
