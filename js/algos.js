@@ -38,7 +38,7 @@ function keyvalue (object1, object2) {
     }
   }
 
-  // now search that key
+  // now search that key.. 
   if (object1[samekey1] == object2[samekey2]) {
     return true
   }
@@ -49,6 +49,34 @@ function keyvalue (object1, object2) {
 
 // write a function that takes an integer for length, and builds and returns an array of strings of the given length. return an array of random words based on the int it was passed. words should be at least 1 letter and max 10 letters
 
+// create function with one int being passed in as an argument. that int will inidicate how many times we will do something
+// create empty array and add each word there
+
+function ranword(int) {
+  var ran_words = [];
+  var counter = 0
+  var letters = "abcdefghijklmnopqrstuvwxyz"
+  
+  while (counter < int) {
+    // find out the length of that word
+      word_length = Math.floor((Math.random() * 10) + 1)
+      var word = " ";
+    // do a for loop ? or while loop. some loop
+      for (var i = 0; i < word_length; i++){
+          word +=  letters.charAt(Math.floor(Math.random() * letters.length));
+
+        // push random word to array
+        ran_words.push(word);
+        // increase counter
+        counter += 1;
+      }
+  }
+  // return array
+  return ran_words;
+}
+
+// driver code for release 2
+console.log(ranword(3)); 
 
 
 // driver code for release 1
