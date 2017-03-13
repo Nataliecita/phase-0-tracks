@@ -8,10 +8,17 @@
 function reverse(string) {
   var new_word = "";
 
+
   for (var i = string.length - 1; i >= 0; i--) {
     new_word += string[i];
   }
   return new_word;
 }
 
-console.log(reverse("hello"))
+console.log(reverse("hello"));
+
+
+if (1 ==1 ) {
+  console.log(reverse("wooohooo"));
+}
+
