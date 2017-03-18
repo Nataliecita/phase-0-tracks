@@ -1,0 +1,58 @@
+1.Display the information in one table (either table is fine).
+
+SELECT * FROM superheroes;
+
+2.Update an item that meets some condition (you can choose a condition that makes sense).
+
+UPDATE superheroes SET name= "Dare Devil" WHERE name = "Daredevil";
+
+3.Display the information in both tables using one query.
+<!-- Shows repetitive data -->
+SELECT* FROM superheroes, comics WHERE superheroes.comic_id = comics.id;
+
+1  Spider-Man      1962-08-13  true   2  2           Marvel
+2  Hulk            1966-04-21  false  2  2           Marvel
+3  Superman        1950-02-29  false  1  1           DC
+4  Batman          1939-01-25  true   1  1           DC
+5  Dare Devil      1986-02-18  true   2  2           Marvel
+6  WonderWoman     1987-12-18  false  1  1           DC
+7  CaptainAmerica  1920-07-04  true   2  2           Marvel
+8  Thor            1000-03-01  false  2  2           Marvel
+9  Flash           1950-04-21  true   1  1           DC
+
+<!-- Makes data easier to read -->
+SELECT superheroes.name, comics.name, superheroes.dob, superheroes.wears_mask FROM superheroes JOIN comics ON superheroes.comic_id = comics.id;
+
+Spider-Man    Marvel        1962-08-13    true
+Hulk          Marvel        1966-04-21    false
+Superman      DC            1950-02-29    false
+Batman        DC            1939-01-25    true
+Dare Devil    Marvel        1986-02-18    true
+WonderWoman   DC            1987-12-18    false
+CaptainAmeri  Marvel        1920-07-04    true
+Thor          Marvel        1000-03-01    false
+Flash         DC            1950-04-21    true
+
+4.Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+SELECT superheroes.name, comics.name FROM superheroes JOIN comics ON superheroes.comic_id = comics.id;
+
+Spider-Man    Marvel
+Hulk          Marvel
+Superman      DC
+Batman        DC
+Dare Devil    Marvel
+WonderWoman   DC
+CaptainAmeri  Marvel
+Thor          Marvel
+Flash         DC
+
+5.Delete an item that meets some condition (you can choose a condition that makes sense).
+
+DELETE FROM superheroes WHERE wears_mask = "false";
+
+Spider-Man  Marvel      1962-08-13  true
+Batman      DC          1939-01-25  true
+Dare Devil  Marvel      1986-02-18  true
+CaptainAme  Marvel      1920-07-04  true
+Flash       DC          1950-04-21  true
