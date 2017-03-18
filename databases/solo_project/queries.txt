@@ -1,0 +1,102 @@
+1.Display the information in one table (either table is fine).
+
+SELECT * FROM superheroes;
+
+2.Update an item that meets some condition (you can choose a condition that makes sense).
+
+UPDATE superheroes SET name= "Dare Devil" WHERE name = "Daredevil";
+
+3.Display the information in both tables using one query.
+<!-- Shows repetitive data -->
+SELECT* FROM superheroes, comics WHERE superheroes.comic_id = comics.id;
+
+1  Spider-Man      1962-08-13  true   2  2           Marvel
+2  Hulk            1966-04-21  false  2  2           Marvel
+3  Superman        1950-02-29  false  1  1           DC
+4  Batman          1939-01-25  true   1  1           DC
+5  Dare Devil      1986-02-18  true   2  2           Marvel
+6  WonderWoman     1987-12-18  false  1  1           DC
+7  CaptainAmerica  1920-07-04  true   2  2           Marvel
+8  Thor            1000-03-01  false  2  2           Marvel
+9  Flash           1950-04-21  true   1  1           DC
+
+<!-- Makes data easier to read -->
+SELECT superheroes.name, comics.name, superheroes.dob, superheroes.wears_mask FROM superheroes JOIN comics ON superheroes.comic_id = comics.id;
+
+Spider-Man    Marvel        1962-08-13    true
+Hulk          Marvel        1966-04-21    false
+Superman      DC            1950-02-29    false
+Batman        DC            1939-01-25    true
+Dare Devil    Marvel        1986-02-18    true
+WonderWoman   DC            1987-12-18    false
+CaptainAmeri  Marvel        1920-07-04    true
+Thor          Marvel        1000-03-01    false
+Flash         DC            1950-04-21    true
+
+4.Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+SELECT superheroes.name, comics.name FROM superheroes JOIN comics ON superheroes.comic_id = comics.id;
+
+Spider-Man    Marvel
+Hulk          Marvel
+Superman      DC
+Batman        DC
+Dare Devil    Marvel
+WonderWoman   DC
+CaptainAmeri  Marvel
+Thor          Marvel
+Flash         DC
+
+5.Delete an item that meets some condition (you can choose a condition that makes sense).
+
+DELETE FROM superheroes WHERE wears_mask = "false";
+
+Spider-Man  Marvel      1962-08-13  true
+Batman      DC          1939-01-25  true
+Dare Devil  Marvel      1986-02-18  true
+CaptainAme  Marvel      1920-07-04  true
+Flash       DC          1950-04-21  true
+
+
+RELEASE 3: RESEARCH on Your OWN
+
+-CROSS JOIN: A CROSS JOIN matches every row of the first table with every row of the second table. If the input tables have x and y columns, respectively, the resulting table will have x*y columns. Because CROSS JOINs have the potential to generate extremely large tables, care must be taken to only use them when appropriate.
+
+ SELECT superheroes.name, dob, wears_mask, comic_id  FROM superheroes CROSS JOIN comics;
+
+Spider-Man    1962-08-13  true   2
+Spider-Man    1962-08-13  true   2
+Batman        1939-01-25  true   1
+Batman        1939-01-25  true   1
+Dare Devil    1986-02-18  true   2
+Dare Devil    1986-02-18  true   2
+CaptainAmeri  1920-07-04  true   2
+CaptainAmeri  1920-07-04  true   2
+Flash         1950-04-21  true   1
+Flash         1950-04-21  true   1
+
+-INNER JOIN: A INNER JOIN creates a new result table by combining column values of two tables (table1 and table2) based upon the join-predicate. The query compares each row of table1 with each row of table2 to find all pairs of rows which satisfy the join-predicate. When the join-predicate is satisfied, column values for each matched pair of rows of A and B are combined into a result row.
+
+An INNER JOIN is the most common type of join and is the default type of join. You can use INNER keyword optionally.
+
+
+SELECT superheroes.id, superheroes.name, comics.name FROM superheroes JOIN comics ON superheroes.comic_id = comics.id;
+1  Spider-Man      Marvel
+4  Batman          DC
+5  Dare Devil      Marvel
+7  CaptainAmerica  Marvel
+9  Flash           DC
+
+-OUTER JOIN: SQLite only supports the LEFT OUTER JOIN.
+
+The OUTER JOINs have a condition that is identical to INNER JOINs, expressed using an ON, USING, or NATURAL keyword. The initial results table is calculated the same way. Once the primary JOIN is calculated, an OUTER join will take any unjoined rows from one or both tables, pad them out with NULLs, and append them to the resulting table.
+
+SELECT superheroes.id, superheroes.name, comic_id FROM superheroes LEFT OUTER JOIN comics ON superheroes.comic_id = comics.id;
+
+1  Spider-Man      2
+4  Batman          1
+5  Dare Devil      2
+7  CaptainAmerica  2
+9  Flash           1
+
+
