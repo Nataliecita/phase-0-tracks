@@ -77,7 +77,8 @@ end
 end
 
 
-
+# now match the mentors with the mentees based on skill
+# SELECT * FROM skills INNER JOIN mentee ON skills.id = mentee.skill_id INNER JOIN mentors ON mentors.skill_id = skills.id;
 
 
 
