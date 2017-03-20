@@ -54,12 +54,6 @@ tech.each do |tech|
   db.execute("INSERT INTO skills (skill) VALUES (?)", [tech])
 end
 
-# method that randomizes a skill from an array
-# def skills
-  # skills = ["ruby", "Javascript", "C", "Python"]
-  # skills.sample
-# end
-
 def create_mentor(db, name, location, email, skill_id)
   db.execute("INSERT INTO mentors (name, location, email, skill_id) VALUES (?,?,?,?)", [name,location, email, skill_id])
 end
@@ -79,11 +73,3 @@ end
 
 # now match the mentors with the mentees based on skill
 # SELECT * FROM skills INNER JOIN mentee ON skills.id = mentee.skill_id INNER JOIN mentors ON mentors.skill_id = skills.id;
-
-
-
-
-
-
-
-
