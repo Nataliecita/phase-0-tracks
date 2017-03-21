@@ -18,3 +18,5 @@ var body = document.getElementsByTagName('body');
 body[0].insertBefore(newHeading, firstParagraph);
 
 body[0].insertBefore(newParagraph, firstParagraph);
+
+firstParagraph.style.border="2px solid black";
