@@ -19,4 +19,10 @@ body[0].insertBefore(newHeading, firstParagraph);
 
 body[0].insertBefore(newParagraph, firstParagraph);
 
-firstParagraph.style.border="2px solid black";
+
+function addBlackBorder(event) {
+  firstParagraph.style.border = "2px solid black";
+}
+
+firstParagraph.addEventListener("click", addBlackBorder);
+
