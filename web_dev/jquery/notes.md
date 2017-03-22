@@ -50,14 +50,75 @@
 The simplest thing we can do with jQuery is get some elements and do something with them. If you understand CSS selectors, getting some elements is very straightforward: you simply pass the appropriate selector to $().
     - It's important to understand that any selection you make will only contain elements that existed in the page when you made the selection. That is, if you write var anchors = $( 'a' ); and then add another <a> element to your page later, then your anchors variable will not contain that new element.
 
--Stopped at creating new elements
+--add the jquery library to your script
+
+###examples
+$(function(){
+    $("#idselector").hide(300).show(1000);
+})
+
+$(function(){
+    $("#idselector").slideUp(1000).slideDown(1000);
+})
+
+$(function(){
+    $("#idselector").hide(300).delay(1000).show(1000);
+})
+
+-fadeIn, toggle
+
+####change the css
+$("#idselector").css({
+color:'red',
+fontWeight:'bold'
+});
+
+
+####change html
+
+$('#idselector').html('my button');
+
+####listening to events
+
+*we start with the thing we want to listen to..method..eventname. Then the second argument will be what we want to change
+
+*some methods*
+-click
+-mouseover
+
+$('#idselector').on('click', function(){
+    $('#idSelectorWewantToAffect').slideToggle(200);
+})
+
+$('#idselector').on('click', function(){
+    $('#idSelectorWewantToAffect .thinginsideWewantTochange').html('my new content');
+})
+
+####cleaning jQuery
+*instead of targetting by id tagret by class.*
+
+$(fucntion(){
+    
+    $('.class').on('click', function(){
+        var panelId = $(this).attr('data-panelid');
+        $('#'+panelId).toggle();
+        });
+
+});
+
+
+
 
 
 ##for after
 * https://javascriptweblog.wordpress.com/2010/07/06/function-declarations-vs-function-expressions/
 * understand a feature of JavaScript known as hoisting.
 * .call() vs .apply() on MDN docs
-* 
+
+
+##notes on plan of attack
+* As soon as I started my plan of attack changed. I did a basic read on JS first before reading some explanations on jQuery. 
+* I found the explanation on jQuery not to be as effective as I couldnt visualize it. It wasn't until I started watched 8 min tutorial videos with explanations and examples that things started to make sense. I think when I start learning a concept, I should start with a short intro video on the topic and then go forth with the docs. At least then, I'll be able to have a better picture on my head.  
 
 
 
