@@ -54,3 +54,19 @@ get '/contact' do
   output << "Sunshine State, World"
   output
 end
+
+# /great_job route that can take a person's name as a query parameter (not a route parameter) and say "Good job, [person's name]!". If the query parameter is not present, the route simply says "Good job!"
+
+
+# http://localhost:9393/great_job?name=nat
+
+get '/great_job' do
+
+  name = params[:name]
+  if name
+      "Good job, #{name}!"
+  else
+  "Good job!"
+  end
+
+end
