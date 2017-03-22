@@ -70,3 +70,17 @@ get '/great_job' do
   end
 
 end
+
+# A route that uses route parameters to add two numbers and respond with the result. The data types are tricky here -- when will the data need to be (or arrive as) a string?
+
+get '/add/:num1/:num2' do
+  num1 =params[:num1]
+  num2= params[:num2]
+
+  # convert to int to add
+  result = num1.to_i + num2.to_i
+  # convert back to string so it can be outputted
+  result.to_s
+end
+
+
