@@ -58,4 +58,13 @@
 
 
 # Optional bonus question: What is a cookie (the technical kind, not the delicious kind)? How does it relate to HTTP requests?
-*
+
+- cookies are small files whihc are stored on a user's computer. They are designed to a hold a modest amountof data specific to a particular client and website, and can be accessed either by the web server or the client computer. This allows the server to deliver a page tailored to a particular user, or the page itself can contain some script which is aware of the data in the cookie and so is able to carry information from one visit to the website(or related site) to the next. 
+- whats in a cookie?
+    + each cookie is effectively a small lookup table containing pairs(key, data) values- for example (firstname, John)(lastname, Smith). Once the cookie has been read by the code on the server or client computer, the data can be retireved and used to customise the web page appropriately.
+- When are cookies created?
+    +Writing data to a cookie is usually done when a new webpage is loaded - for example adter a 'submit' btton is pressed the data handling page would be responsible for storing the values in a cookie.
+- Why are cookies used?
+    +Cookies are  aconvenient way to carry information from one session on a website to another, or between sessions on related websites, wihtout having to burden a server machine with massive amounts of data storage. 
+-How cookies relate to http requests
+    +Cookies are passed as HTTP headers, both in the request (client -> server), and in the response (server -> client).    
