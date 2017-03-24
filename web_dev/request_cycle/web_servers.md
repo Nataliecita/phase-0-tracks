@@ -17,6 +17,8 @@ Advantages:
 - performance can be compared to one of a dedicated service
 - -Managing: you can safely manage your vps with a control panel, on the Internet.
 - operating system- you can choose what operating system you want
--  
+  
 
 #Optional bonus question: Why is it considered a bad idea to run programs as the root user on a Linux system?
+-Security. When you are logged as root, all applications are running with root privileges, so every vulnerabiltiy in things like Firefox, Flash, can destroy your system.
+-when you are logged as root, you can do everything, the sysemt wont ask you. So nothing will prevent you from doing something unwidr.
