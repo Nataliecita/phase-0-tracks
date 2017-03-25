@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	J query sample
+	</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<h1 id="head1"> Header 1</h1>
+<p></p>
+<h2>Mini header</h2>
+
+<button id="but1"> Button Hide</button>
+<button id= "but2"> Button Toggle</button>
+<button id= "but3"> Button Color change</button>
+<button id= "but4"> Button 4</button>
+
+<script>
+	
+$(document).ready(function(){
+
+	$('#but1').hide(400).show(1000);
+
+	$('#but2').toggle(2000).toggle(1000);
+
+	$('#but3').css({
+		color:'green', 
+		// fontWeight:'bold'
+	});
+
+	$('#but4').on('click', function(){
+		$('#head1').css({
+			color:'blue'
+		});
+	});
+
+
+});
+
+
+
+</script>
+
+
+</body>
+</html>
